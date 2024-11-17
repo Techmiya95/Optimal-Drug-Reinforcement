@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Dosage Optimization</title>
+</head>
+<body>
+    <h1>Drug Dosage Optimization</h1>
+    <form action="/predict" method="post">
+        <label for="tumor">Tumor Cell Count:</label>
+        <input type="text" name="tumor_cell_count" required><br>
+
+        <label for="immune">Immune Cell Count:</label>
+        <input type="text" name="immune_cell_count" required><br>
+
+        <label for="desired_tumor">Desired Tumor Cell Count:</label>
+        <input type="text" name="desired_tumor_cell_count" required><br>
+
+        <label for="desired_immune">Desired Immune Cell Count:</label>
+        <input type="text" name="desired_immune_cell_count" required><br>
+
+        <label for="uncertainty">Uncertainty Factor:</label>
+        <input type="text" name="uncertainty_factor" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
